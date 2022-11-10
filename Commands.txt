@@ -1,0 +1,22 @@
+Create .ico file from png file
+create .qrc file
+
+Add the following code in .qrc file.
+
+<RCC>
+<qresource prefix="/">
+<file>calc.png</file>
+</qresource>
+</RCC>
+
+
+create image_file.py with the help of .qrc file and command: pyrcc5 calculator.qrc -o image_file.py
+
+import image_file.py in main file(calculator.py)
+
+Change code for icon to this:
+MainWindow.setWindowIcon(QtGui.QIcon(':/calc.png'))
+
+install pyinstaller
+
+pyinstaller --onefile --windowed --icon "calc.ico" --name "calculator" calculator.py
